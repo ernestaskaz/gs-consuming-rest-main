@@ -15,6 +15,7 @@ public class QuoteController {
         value.setId(id);
         quote.setValue(value);
 
+
         return quote;
 
     }
@@ -28,6 +29,8 @@ public class QuoteController {
         value.setQuote("a quote value from variable");
         value.setId(id);
         quote.setValue(value);
+
+       //http://localhost:8080/quote/random/78
 
         return quote;
 
