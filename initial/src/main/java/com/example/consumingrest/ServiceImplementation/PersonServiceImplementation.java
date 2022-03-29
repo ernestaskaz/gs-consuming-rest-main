@@ -5,6 +5,8 @@ import com.example.consumingrest.Repository.PersonRepository;
 import com.example.consumingrest.Service.PersonService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PersonServiceImplementation implements PersonService {
 
@@ -16,5 +18,10 @@ public class PersonServiceImplementation implements PersonService {
     @Override
     public Person savePerson(Person person) {
         return personRepository.save(person);
+    }
+
+    @Override
+    public List<Person> getPeople() {
+        return personRepository.findAll();
     }
 }

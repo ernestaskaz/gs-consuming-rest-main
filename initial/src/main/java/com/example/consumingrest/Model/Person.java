@@ -11,7 +11,7 @@ import javax.persistence.*;
 public class Person {
     @Id
     //identity does not work?
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String name;
 
