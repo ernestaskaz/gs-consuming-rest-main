@@ -1,5 +1,6 @@
 package com.example.consumingrest;
 
+import com.example.consumingrest.Model.Quote;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -18,37 +19,32 @@ public class ConsumingRestApplication {
 		SpringApplication.run(ConsumingRestApplication.class, args);
 	}
 
-	@Bean
-	public RestTemplate restTemplate(RestTemplateBuilder builder) {
-		return builder.build();
-	}
-
-	@Bean
-	public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
-		return args -> {
-			IP ip = restTemplate.getForObject(
-					"http://echo.jsontest.com/value/zxc", IP.class);
-			log.info(ip.getValue());
-
-			IP ip2 = restTemplate.getForObject(
-					"http://echo.jsontest.com/value/whatkindofvalueisthis", IP.class);
-			log.info(ip2.getValue());
-
-			Quote quote = restTemplate.getForObject(
-					"http://localhost:8080/quote/random?id=507", Quote.class);
-
-			log.info(quote.toString());
-
-			Quote pathQuote = restTemplate.getForObject(
-					"http://localhost:8080/quote/random/77", Quote.class);
-
-			log.info(pathQuote.toString());
-
-
-		};
-
-
-
-
-	}
+//	@Bean
+//	public RestTemplate restTemplate(RestTemplateBuilder builder) {
+//		return builder.build();
+//	}
+//
+//	@Bean
+//	public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
+//		return args -> {
+//
+//			Quote quote = restTemplate.getForObject(
+//					"http://localhost:8080/quote/random?id=507", Quote.class);
+//
+//			log.info(quote.toString());
+//
+//			log.warn(quote.toString());
+//
+//			Quote pathQuote = restTemplate.getForObject(
+//					"http://localhost:8080/quote/random/77", Quote.class);
+//
+//			log.info(pathQuote.toString());
+//
+//
+//		};
+//
+//
+//
+//
+//	}
 }

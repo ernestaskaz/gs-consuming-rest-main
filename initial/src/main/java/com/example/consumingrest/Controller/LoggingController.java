@@ -1,4 +1,4 @@
-package com.example.consumingrest;
+package com.example.consumingrest.Controller;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
